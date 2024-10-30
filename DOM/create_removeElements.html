@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Favourite foods</h1>
+    <ul id="foodList">
+       <li>Pizza</li>
+       <li>Sushi</li>
+    </ul>
+    <button id="addButton">Add Tacos</button>
+    <button id="removeButton">Remove Sushi</button>
+
+    <script>
+        // Sélection du bouton "Add Tacos" dans le DOM et assignation à la variable addButton
+        const addButton = document.querySelector("#addButton");
+
+        // Sélection du bouton "Remove Sushi" dans le DOM et assignation à la variable removeButton
+        const removeButton = document.querySelector("#removeButton");
+
+        // Sélection de la liste non ordonnée des aliments avec l'id "foodList"
+        const foodList = document.querySelector("#foodList"); 
+
+        // Ajout d'un événement 'click' au bouton "Add Tacos"
+        addButton.addEventListener('click', () => {
+            // Création d'un nouvel élément <li> pour la liste
+            const newListItem = document.createElement('li');
+
+            // Création d'un nœud texte avec le texte "Tacos"
+            const newListItemText = document.createTextNode('Tacos');
+
+            // Ajoute le nœud texte "Tacos" à l'élément <li> nouvellement créé
+            newListItem.append(newListItemText);
+
+            // Ajoute l'élément <li> avec le texte "Tacos" dans la liste <ul> avec l'id "foodList"
+            foodList.appendChild(newListItem);
+        });
+
+        // Ajout d'un événement 'click' au bouton "Remove Sushi"
+        removeButton.addEventListener('click', () => {
+            // Sélectionne le 2ᵉ élément <li> de la liste (qui est "Sushi")
+            const sushi = document.querySelector('li:nth-child(2)');
+
+            // Supprime l'élément sélectionné (c'est-à-dire "Sushi") de la liste <ul>
+            foodList.removeChild(sushi);
+        });
+    </script>
+</body>
+</html>

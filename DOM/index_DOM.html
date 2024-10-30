@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM selectors</h1>
+
+    <!-- <div id="hello">Hello world</div>
+    <div>Hi, there</div>
+    <ul>
+        <li class="green">Item 1</li>
+        <li>Item 2</li>
+        <li class="green">Item 3</li>
+        <li class="green">Item 4</li>
+
+    </ul> -->
+
+
+    <h1>DOOM Manipulation</h1>
+    <div>
+        <span id="one" name="first"> First span</span>
+        <span id="two" name="second"> Second span</span>
+
+    </div>
+    <script>
+        // ***** Access DOM elements
+        // console.log(document.getElementById("hello")) 
+
+
+        // let items=document.getElementsByClassName("green");
+        // console.log(items);
+
+        // console.log(document.getElementsByTagName("li"));
+
+        // console.log(document.querySelector(".green")); // returns only the first element with this css selector
+    
+        // console.log(document.querySelectorAll(".green")); // returns all elements with this css selector
+
+
+        //  // ***** Manipulate DOM elements
+        //  console.log("***********************");
+        //  //console.dir(document);
+        //  console.log(document.domain);
+        //  console.log(document.URL);
+        //  document.title="DOM Manipulation"
+
+        //  const body=document.body;
+        //  body.append("hello");
+        //  const div=document.createElement("div"); //but not added in body console 
+        //  console.log(div.outerHTML); // Prend une capture statique de l'état de `div`
+        //  console.log(div); //<div>JavaScript</div>
+        //  div.innerText="JavaScript"; //! voir partie commentaires
+        //  body.append(div);
+        //  body.removeChild(div);
+        //  div.remove(); // voir partie commentaires
+
+
+
+
+        // ***** Modify attributes
+        const div =document.querySelector("div");
+        const spanOne=document.getElementById("one");
+        const spanTwo=document.getElementById("two");
+        console.log(spanOne.getAttribute("name"));
+        spanOne.setAttribute("name","first changed");
+        console.log(spanOne.getAttribute("name"));
+        spanOne.removeAttribute("name");
+        spanOne.id="gjhklrgg";
+
+        spanTwo.classList.add("new-class");
+        spanTwo.classList.remove("new-class");
+
+        // ***** Modify styles
+        spanOne.style.color="red";
+        spanTwo.style.backgroundColor="green";
+
+
+
+
+    
+    </script>
+</body>
+</html>

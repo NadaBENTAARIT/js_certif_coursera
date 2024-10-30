@@ -1,0 +1,5 @@
+////////// Une closure permet à une fonction interne d'accéder aux
+ variables de son scope parent même après que la fonction parente a terminé son exécution.
+  Cela signifie que la fonction interne "capture" et "se souvient" du contexte dans lequel elle 
+  a été créée, y compris les variables locales
+ et les paramètres de la fonction parente.

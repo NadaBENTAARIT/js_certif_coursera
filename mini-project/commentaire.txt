@@ -1,0 +1,8 @@
+t la syntaxe de la chaîne de caractères avec les backticks (`) au lieu des guillemets simples (').
+Utilisation de backticks (`) pour créer une template string qui permet l'interpolation de la variable ${taskText}.
+
+
+
+
+
+********

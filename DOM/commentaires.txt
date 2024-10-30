@@ -1,0 +1,67 @@
+Différences clés
+Méthode****	.append()	****.appendChild()
+Types acceptés**	Nœuds ou chaînes de caractères	     ** Un seul nœud DOM
+Plusieurs éléments***	Oui (ajoute plusieurs nœuds ou du texte)***	Non (un seul nœud à la fois)
+Retour	***Aucun retour	***Retourne le nœud ajouté
+Compatibilité**	Plus flexible	***Limité aux nœuds DOM uniquement
+Quand utiliser l'une ou l'autre ?
+Utilise .append() lorsque tu souhaites ajouter du texte ou plusieurs éléments d’un coup.
+Utilise .appendChild() lorsque tu as besoin d’ajouter un seul nœud et que tu veux le récupérer directement après.
+
+
+Astuce :
+État en direct dans la console : Les navigateurs comme Chrome ou Firefox affichent souvent les objets DOM sous forme "vivante" ou dynamique. Cela signifie que même si tu exécutes console.log(div); avant de changer innerText, la console affiche l'état actuel de div au moment où tu consultes la sortie, et non l'état au moment où console.log a été appelé.
+
+Débogage en mode "instantané" : Si tu veux voir la valeur de div au moment exact du console.log, tu peux utiliser console.log(div.outerHTML) pour capturer une représentation textuelle fixe de l'élément HTML.
+
+
+
+
+finally block
+error vs exception
+
+
+
+
+Les méthodes .remove() et .removeChild() sont toutes deux utilisées pour supprimer des éléments du DOM, mais elles fonctionnent différemment.
+
+1. .remove()
+Usage : element.remove()
+Fonctionnalité : Supprime directement l’élément lui-même du DOM, sans avoir besoin de spécifier le parent.
+Simplification : C’est une méthode simple et directe, qui ne nécessite pas de sélectionner le parent de l’élément.
+Compatibilité : .remove() est une méthode plus récente et peut ne pas être prise en charge dans les très anciens navigateurs (comme Internet Explorer).
+Exemple avec .remove()
+javascript
+Copier le code
+const element = document.getElementById("myElement");
+element.remove(); // Supprime l'élément `element` du DOM
+2. .removeChild()
+Usage : parent.removeChild(childElement)
+Fonctionnalité : Supprime un nœud enfant spécifique du DOM à partir de son parent. Il est nécessaire d’appeler cette méthode sur le parent de l’élément à supprimer.
+Retour : .removeChild() retourne l’élément supprimé, ce qui peut être utile si tu veux réutiliser ou manipuler l'élément supprimé plus tard.
+Compatibilité : .removeChild() est une méthode bien supportée et fonctionne dans tous les navigateurs, même les plus anciens.
+Exemple avec .removeChild()
+javascript
+Copier le code
+const parent = document.getElementById("parentElement");
+const child = document.getElementById("childElement");
+parent.removeChild(child); // Supprime `child` de `parent`
+Différences clés
+Méthode	.remove()	.removeChild()
+Utilisation	Directement sur l'élément à supprimer	Sur le parent de l'élément à supprimer
+Retour	Aucun	Retourne le nœud supprimé
+Compatibilité	Plus récente, pas supportée par IE	Ancienne méthode, supportée par tous
+Parent requis	Non	Oui
+Quand utiliser l'une ou l'autre ?
+Utilise .remove() lorsque tu veux supprimer directement un élément sans avoir besoin de son parent.
+Utilise .removeChild() lorsque tu as besoin de manipuler le parent ou lorsque tu veux récupérer le nœud supprimé.
+
+
+textContent (vs innerText) : This property retrieves or sets the text content of an element, excluding HTML tags. It’s often used to get or set plain text within an element.
+Other Options
+innerHTML : Retrieves or sets the HTML content of an element, including tags. It is not limited to text-only content.
+value : Used primarily with form elements like <input>, <textarea>, and <select> to get or set the value of the input.
+label : Used with <option> elements within a <select> to get the label if one is specified, or falls back to the text content of the option.
+
+! innerText te donne seulement le texte visible d’un élément, en respectant le style CSS.
+! textContent ne se soucie pas du style (comme display: none ou visibility: hidden). Il renvoie tout le texte, même si on

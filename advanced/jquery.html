@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script>
+        $(document).ready(function(){ // when html page is finished loading
+            $("button").click(function(){
+                $("#myBox").fadeToggle()
+            })
+        })
+    </script> -->
+
+
+    <script>
+        $(document).ready(function(){
+            var filteredItems=$("li").filter(function(){
+                return $(this).text().includes('2'); // check if txt includes 2
+            })
+            filteredItems.addClass("hightlight")
+        })
+    </script>
+    <style>
+        .required-field {
+            border : 2px solid red;
+        }
+        .active{
+            background-color: aqua;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: none;
+        }
+        .hightlight{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- ****************  jQUERY SELECTORS
+    <h1> Jquery selectors</h1>
+<p>This is a paragraph</p>
+<p id="myElement" class="highlight">This paragraph has a highlight class</p>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<a href="#" class="nav-link">Navigation link 1</a>
+<a href="#" class="nav-link">Navigation link 2</a>
+
+<h2>Heading 1</h2>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<input type="text" required>
+<input type="text">
+<input type="text" required>
+<button>Button 1</button>
+<button>Button 2</button>
+
+<form id="myForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="paswword" placeholder="Password">
+    <input type="submit" value="Submit">
+
+</form> -->
+
+
+
+
+
+<!-- ********************************* Jqury effects
+<h1>Effects exemple</h1>
+<button> Toggle Box</button>
+<div id="myBox" class="box"></div> -->
+
+
+
+
+
+
+
+
+
+
+<!--  *************  JQUERY TRAVERSING :select and manipulate particular elements based on their relationship with other elements 
+<h1>Traversing exemple</h1>
+<ul>
+    <li>Item 1</li>
+    <li> Item 2</li>
+    <li> Item 3</li>
+</ul> -->
+<script>
+    // **************** JquerySelectors
+//$("p").text("This text is changed by jquery") //elemnet selector
+//$(".highlight").css("color","red") //class selector
+//$("#myElement").hide() //id selector
+//$("input[required]").addClass("required-field") // attribute selector
+//$("a.nav-link").addClass("active") // combine tag and class selectors
+
+//******************* Jquery effects : add visual transitions and animation to HTML elements
+</script>
+
+
+
+</body>
+</html>

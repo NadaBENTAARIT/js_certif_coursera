@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed{
+            text-decoration:line-through;
+            color: grey;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <button id="myButton">Click me!</button>
+    <input id="searchBox" type="text"/> -->
+    <h1>To do list</h1>
+    <ul>
+        <li> By groceries</li>
+        <li>Do laundry</li>
+        <li>Clear house</li>
+    </ul>
+    <script>
+//         const button=document.querySelector("#myButton");
+//         button.addEventListener('click',()=>{  //callback function
+//             alert("hello") //click event
+//         })
+
+//         button.addEventListener('click', (e) => { 
+//         console.log(`button pressed: ${e}`); // Pointer event
+// });
+
+//         // *********************
+
+//         const searchBox=document.querySelector("#searchBox");
+//         searchBox.addEventListener('keyup',()=>{  //callback function
+//             console.log("event triggered"); // click press event
+//                 })
+
+//                 searchBox.addEventListener('keyup', (e) => { 
+//     console.log(`event triggered: ${e}`); //keyBoardEvent  si e.key displays text written in input field
+// });
+
+listItems=document.querySelectorAll("li");
+listItems.forEach(item => {
+    item.addEventListener('click',()=>{
+        item.classList.toggle("completed");
+    })
+    
+});
+
+    </script>
+</body>
+</html>

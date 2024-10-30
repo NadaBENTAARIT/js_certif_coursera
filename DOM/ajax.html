@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <ul id="userList"></ul>
+    <script>
+        // Sélection de l'élément ul pour afficher les utilisateurs
+        const userList = document.querySelector("#userList");
+        
+        // Création d'une nouvelle requête XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+
+        // Définition de la fonction de gestion de l'état de la requête
+        xhr.onreadystatechange = function() {
+            // Vérifie si la requête est terminée
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Vérifie si la requête a réussi
+                if (xhr.status === 200) {
+                    // Parse les données JSON reçues
+                    const userData = JSON.parse(xhr.responseText);
+                    // Boucle à travers chaque utilisateur et crée un élément de liste pour chacun
+                    userData.forEach(user => {
+                        const newUser = document.createElement('li');
+                        const newUserText = document.createTextNode(user.name);
+
+                        newUser.appendChild(newUserText);
+                        userList.appendChild(newUser);
+                    });
+                } else {
+                    // Affiche un message d'erreur si la requête a échoué
+                    console.log('There was a problem with the request');
+                }
+            }
+        };
+
+        // Ouverture et envoi de la requête GET
+        xhr.open('GET', "https://jsonplaceholder.typicode.com/users"); // préparation de la requête.
+        xhr.send();
+
+//  *********** l’ordre d’exécution :
+// Création et initialisation de xhr.
+// Définition de la fonction onreadystatechange.
+// Ouverture de la requête avec xhr.open().
+// Envoi de la requête avec xhr.send().
+// Réception de la réponse et exécution de la fonction onreadystatechange chaque fois que readyState change, jusqu'à ce que readyState atteigne XMLHttpRequest.DONE.
+// Traitement de la réponse et mise à jour du DOM si le statut est 200.
+
+
+//*************************
+// La fonction xhr.onreadystatechange est un gestionnaire d'événements. Cela signifie qu'il est
+//  automatiquement déclenché par le navigateur chaque fois
+//  que l'état de la requête change.
+    </script>
+</body>
+</html>
+ 
